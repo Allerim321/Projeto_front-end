@@ -1,6 +1,6 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
-import { Button } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
 
 function Header(btn) {
     return (
