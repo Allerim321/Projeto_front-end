@@ -1,5 +1,4 @@
 import { Children } from 'react'
-import Header from './Header'
 
 function Conteudo() {
     return(
