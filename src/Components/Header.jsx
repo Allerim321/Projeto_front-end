@@ -3,6 +3,11 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 
 function Header(btn) {
+
+    function Sair(){
+        localStorage.removeItem("key")
+    }
+    
     return (
         <header>
             <Navbar variant='dark'>
@@ -13,7 +18,7 @@ function Header(btn) {
                     {btn ? (
                     <div className='d-flex gap-3'>
                         <Button>Adicionar</Button>
-                        <Button>Sair</Button>
+                        <Button onClick={Sair}>Sair</Button>
                         </div>
                     ) : ""}
                 </Container>
