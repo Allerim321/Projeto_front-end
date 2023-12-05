@@ -2,8 +2,12 @@ import Table from 'react-bootstrap/Table'
 import Axios from 'axios'
 import { useState, useEffect } from 'react'
 
+
+function Tabela(){
 //criando uma array vazia para guardar os dados da tabela
 const[dados, setDados] = useState([])
+//criando uma const para botão de atualizar
+const[btnValue, setBtnValue] = useState("Atualizar")
 
     //primeiro uma função de callback, depois uma array
     useEffect(() => {
@@ -13,10 +17,10 @@ const[dados, setDados] = useState([])
             }).catch(
                 (error) =>{
                         console.log(error)
-                })}, [])
-function Tabela(){
+                })}, [btnValue])
     return (
         <>
+        <button onClick={() => setBtnValue("Atualizado")}>{btnValue}</button>
             <Table>
                 <thead>
                     <tr>
