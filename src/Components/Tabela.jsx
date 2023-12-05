@@ -3,7 +3,7 @@ import Axios from 'axios'
 
 Axios.get("https://apiaulas.thiagodev502.repl.co/funcionarios").then(
     (resposta) =>{
-        console.log(resposta)
+        console.log(resposta.data)
     }).catch(
         (error) =>{
             console.log(error)
