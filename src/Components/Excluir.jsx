@@ -6,6 +6,11 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 function Excluir({id}){
     const [show, setShow] = useState(true)
+    
+    function ExcluirDados(){
+        axios.delete("https://apiaulas.thiagodev502.repl.co/funcionarios/" + id).then(() =>location.reload).catch((erro) =>{ console.log("Erro ao excluir")})
+    }
+
     return(
         <div>
             <span style={{cursor: "pointer"}} onClick={() => setShow(true)}><AiOutlineDelete /></span>
