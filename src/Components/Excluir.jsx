@@ -1,12 +1,14 @@
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
+import { AiOutlineDelete } from "react-icons/ai";
+
 
 function Excluir({id}){
     const [show, setShow] = useState(true)
     return(
         <div>
-            <span onClick={() => setShow(true)}>Excluir</span>
+            <span style={{cursor: "pointer"}} onClick={() => setShow(true)}><AiOutlineDelete /></span>
             <Modal show={show} onHide={() => setShow(false)}>
                 <Modal.Header closeButton><h2>Excluir</h2></Modal.Header>
                 <Modal.Body><p>Deseja excluir o item?</p></Modal.Body>
