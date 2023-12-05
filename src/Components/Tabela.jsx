@@ -1,17 +1,19 @@
 import Table from 'react-bootstrap/Table'
 import Axios from 'axios'
+import { useState, useEffect } from 'react'
 
 //criando uma array vazia para guardar os dados da tabela
 const[dados, setDados] = useState([])
 
-//utilizando a biblioteca axios, o método get fará uma requisição de dados
-Axios.get("https://apiaulas.thiagodev502.repl.co/funcionarios").then(
-    (resposta) =>{
-        setDados(resposta.data)
-    }).catch(
-        (error) =>{
-            console.log(error)
-        })
+    //primeiro uma função de callback, depois uma array
+    useEffect(() => {
+        Axios.get("https://apiaulas.thiagodev502.repl.co/funcionarios").then((resposta) =>{
+        //utilizando a biblioteca axios, o método get fará uma requisição de dados
+                setDados(resposta.data)
+            }).catch(
+                (error) =>{
+                        console.log(error)
+                })}, [])
 function Tabela(){
     return (
         <>
