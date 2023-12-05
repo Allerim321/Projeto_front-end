@@ -1,6 +1,8 @@
 import Table from 'react-bootstrap/Table'
 import Axios from 'axios'
 import { useState, useEffect } from 'react'
+import Editar from './Editar'
+import Excluir from './Excluir'
 
 
 function Tabela(){
@@ -37,7 +39,10 @@ const[btnValue, setBtnValue] = useState("Atualizar")
                             <td>{item.id}</td>
                             <td>{item.nome}</td>
                             <td>{item.cargo}</td>
-                            <td></td>
+                            <td>
+                                <Editar />
+                                <Excluir />
+                            </td>
                         </tr>
                    ))}
                 </tbody>
