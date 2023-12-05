@@ -35,13 +35,13 @@ const[btnValue, setBtnValue] = useState("Atualizar")
                 {/* passando os dados requeridos pela biblioteca Axios para a tabela */}
                 <tbody>
                     {dados.map((item, key) => (
-                        <tr>
+                        <tr key={key}>
                             <td>{item.id}</td>
                             <td>{item.nome}</td>
                             <td>{item.cargo}</td>
-                            <td>
-                                <Editar />
-                                <Excluir class="btn btn-outline-danger"/>
+                            <td className='d-flex'>
+                                <Editar class="btn btn-outline-primary" id={item.id}/>
+                                <Excluir class="btn btn-outline-danger" id={item.id}/>
                             </td>
                         </tr>
                    ))}
