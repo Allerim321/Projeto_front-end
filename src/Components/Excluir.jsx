@@ -6,7 +6,7 @@ function Excluir({id}){
     const [show, setShow] = useState(true)
     return(
         <div>
-            <span></span>
+            <span onClick={() => setShow(true)}>Excluir</span>
             <Modal show={show} onHide={() => setShow(false)}>
                 <Modal.Header closeButton><h2>Excluir</h2></Modal.Header>
                 <Modal.Body><p>Deseja excluir o item?</p></Modal.Body>

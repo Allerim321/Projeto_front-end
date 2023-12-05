@@ -41,7 +41,7 @@ const[btnValue, setBtnValue] = useState("Atualizar")
                             <td>{item.cargo}</td>
                             <td>
                                 <Editar />
-                                <Excluir />
+                                <Excluir class="btn btn-outline-danger"/>
                             </td>
                         </tr>
                    ))}
