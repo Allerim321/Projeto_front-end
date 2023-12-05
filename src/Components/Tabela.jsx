@@ -1,5 +1,13 @@
 import Table from 'react-bootstrap/Table'
+import Axios from 'axios'
 
+Axios.get("https://apiaulas.thiagodev502.repl.co/funcionarios").then(
+    (resposta) =>{
+        console.log(resposta)
+    }).catch(
+        (error) =>{
+            console.log(error)
+        })
 function Tabela(){
     return (
         <>
