@@ -39,12 +39,12 @@ const[btnValue, setBtnValue] = useState("Atualizar")
                             <td>{item.id}</td>
                             <td>{item.nome}</td>
                             <td>{item.cargo}</td>
-                            <td className='d-flex'>
-                                <Editar class="btn btn-outline-primary" id={item.id}/>
-                                <Excluir class="btn btn-outline-danger" id={item.id}/>
+                            <td className='d-flex gap-3'>
+                                <Editar id={item.id}/>
+                                <Excluir id={item.id}/>
                             </td>
                         </tr>
-                   ))}
+                    ))}
                 </tbody>
             </Table>
         </>

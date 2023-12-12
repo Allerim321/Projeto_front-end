@@ -14,10 +14,16 @@ function Editar({id}){
 
     return(
         <div>
-            <span style={{cursor: "pointer"}} onClick={() => setShow(true)}><CiEdit /></span>
+            <span style={{cursor: "pointer"}} onClick={() => setShow(true)}>
+                <MdEdit size={20} className="text-primary"/>
+                </span>
             <Modal show={show} onHide={() => setShow(false)}>
-                <Modal.Header closeButton><h2>Editar</h2></Modal.Header>
-                <Modal.Body><Formulario /></Modal.Body>
+                <Modal.Header closeButton>
+                    <h2>Editar</h2>
+                    </Modal.Header>
+                <Modal.Body>
+                    <Formulario id={id}/>
+                    </Modal.Body>
                 <Modal.Footer><Button onClick={EditarDados} class="btn btn-outline-primary">Editar</Button></Modal.Footer>
             </Modal>
         </div>
