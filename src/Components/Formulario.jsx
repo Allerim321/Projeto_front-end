@@ -36,19 +36,19 @@ function Formulario(funcionario, setShow) {
         <Form onSubmit={enviarDados}>
             <Form.Group>
                 <Form.Label>Nome:</Form.Label>
-                <Form.Control type='text'></Form.Control>
+                <Form.Control type='text' defaultValue={funcionario?.nome}></Form.Control>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Cargo:</Form.Label>
-                <Form.Control type='text'></Form.Control>
+                <Form.Control type='text' defaultValue={funcionario?.cargo}></Form.Control>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Departamento:</Form.Label>
-                <Form.Control type='text'></Form.Control>
+                <Form.Control type='text' defaultValue={funcionario?.departamento}></Form.Control>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Salário:</Form.Label>
-                <Form.Control type='text'></Form.Control>
+                <Form.Control type='text' defaultValue={funcionario?.salario}></Form.Control>
             </Form.Group>
             <Form.Group>
                 <Form.Control className='btn btn primary mt-3' type='submit'></Form.Control>

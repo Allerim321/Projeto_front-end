@@ -1,14 +1,16 @@
-import { ModalBody } from "react-bootstrap"
 import Modal from "react-bootstrap/Modal"
+import Formulario from "./Formulario"
 
-function Adicionar() {
+function Adicionar({show, setShow}) {
     return (
         <>
-            <Modal>
+            <Modal show={show} onHide={() => setShow(false)}>
                 <Modal.Header>
                     <h2>Adicionar</h2>
                 </Modal.Header>
-                <ModalBody></ModalBody>
+                <ModalBody>
+                    <Formulario />
+                </ModalBody>
             </Modal>
         </>
     )
