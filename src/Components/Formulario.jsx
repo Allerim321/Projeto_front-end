@@ -2,7 +2,7 @@ import axios from 'axios'
 import Form from 'react-bootstrap/Form'
  
 
-function Formulario(id, setShow) {
+function Formulario(funcionario, setShow) {
 
     function enviarDados(event){
         const nome = event.target[0].value
@@ -11,8 +11,8 @@ function Formulario(id, setShow) {
         const salario = event.target[3].value
     }
 
-    if(id){
-        axios.put(" http://localhost:5173/funcionarios/" + id, 
+    if(funcionario){
+        axios.put(" http://localhost:5173/funcionarios/" + funcionario.id, 
         {
             nome,
             cargo,

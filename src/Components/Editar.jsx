@@ -1,12 +1,20 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CiEdit } from "react-icons/ci";
 import Formulario from './Formulario';
 
 function Editar({id}){
-    const [show, setShow] = useState(true)
-    
+    const [show, setShow] = useState(false)
+    const [funcionario, setFuncionario] = useState(false)
+    useEffect(() =>{
+            axios.get("http://localhost:5173/funcionarios/" + id)
+            .then((resposta) => {
+                setFuncionario(resposta.data)
+            }).catch((error) => {
+                console.log(error)
+            })
+    }, [])
     function EditarDados(){
         axios.delete("https://apiaulas.thiagodev502.repl.co/funcionarios/" + id)
         .then(() =>location.reload).catch((erro) =>{ console.log("Erro ao excluir")
