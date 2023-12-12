@@ -22,7 +22,7 @@ function Editar({id}){
                     <h2>Editar</h2>
                     </Modal.Header>
                 <Modal.Body>
-                    <Formulario id={id}/>
+                    <Formulario id={id} setShow={setShow}/>
                     </Modal.Body>
                 <Modal.Footer><Button onClick={EditarDados} class="btn btn-outline-primary">Editar</Button></Modal.Footer>
             </Modal>

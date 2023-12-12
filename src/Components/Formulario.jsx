@@ -1,6 +1,8 @@
+import axios from 'axios'
 import Form from 'react-bootstrap/Form'
+ 
 
-function Formulario(id) {
+function Formulario(id, setShow) {
 
     function enviarDados(event){
         const nome = event.target[0].value
@@ -10,10 +12,26 @@ function Formulario(id) {
     }
 
     if(id){
-        axios.put(" http://localhost:5173/funcionario/" + id
-        , )
+        axios.put(" http://localhost:5173/funcionarios/" + id, 
+        {
+            nome,
+            cargo,
+            departamento,
+            salario
+        }).then(() => {
+            setShow(false)
+            window.location.reload()
+        })
+    } else{
+        axios.post(" http://localhost:5173/funcionarios/",
+        {
+            nome,
+            cargo,
+            departamento,
+            salario
+        })
     }
-    
+
     return(
         <Form onSubmit={enviarDados}>
             <Form.Group>
